@@ -45,4 +45,23 @@ public class BoundedPriorityQueueSet {
         return queue.size() == maxSize;
     }
 
+    /**
+     * Calculates the position to insert a task based on its priority.
+     * Throws a DuplicateElementException if the task is already present in the queue.
+     * @param task the task to be added
+     * @return position task should be inserted
+//     * @throws DuplicateElementException if the task is already present in the queue
+     */
+    private int calcPosition(Task task){
+        for (int i = 0; i < queue.size(); i++){
+            Task t = queue.get(i);
+            if (task.equals(t)) {
+//                not recognising exception
+//                throw new DuplicateElementException("Task already exists in the queue");
+            }if (task.compareTo(t) < 0){
+                return i;//task has lower priority to task t i.e deadline not as close as task t deadline.
+            }
+        }
+        return queue.size(); // task has highest priority in queue i.e shortest deadline
+    }
 }
