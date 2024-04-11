@@ -37,4 +37,12 @@ public class BoundedPriorityQueueSet {
         return queue.isEmpty();
     }
 
+    /**
+     * Check if queue is full
+     * @return true if queue is full, false otherwise.
+     */
+    public boolean isFull(){
+        return queue.size() == maxSize;
+    }
+
 }
