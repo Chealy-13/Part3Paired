@@ -29,4 +29,12 @@ public class BoundedPriorityQueueSet {
         return queue.size();
     }
 
+    /**
+     * Check if queue is empty
+     * @return true if queue is empty, false otherwise.
+     */
+    public boolean isEmpty(){
+        return queue.isEmpty();
+    }
+
 }
