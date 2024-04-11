@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Task
+public class Task implements Comparable<Task>
     {
         private String owner;
         private String description;
@@ -64,5 +64,19 @@ public class Task
                     ", description='" + description + '\'' +
                     ", deadline=" + deadline +
                     '}';
+        }
+
+        /**
+         * Compares this task with the specified task for natural order.
+         * Returns a negative integer, zero, or a positive integer if the task's deadline is before,
+         * equal to, or after the specified task's deadline.
+         *
+         * @param otherTask the task to be compared
+         * @return a negative integer, zero, or a positive integer if the task's deadline
+         *         is before, equal to, or after the specified task's deadline
+         */
+        @Override
+        public int compareTo(Task otherTask) {
+            return this.deadline.compareTo(otherTask.deadline);
         }
     }
