@@ -19,7 +19,7 @@ public class BoundedPriorityQueueSet {
     public BoundedPriorityQueueSet(int maxSize) {
         this.queue = new LinkedList<>();
         this.maxSize = maxSize;
-    }
+    }//
 
 
 }
