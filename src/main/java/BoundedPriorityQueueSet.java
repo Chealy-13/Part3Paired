@@ -19,7 +19,14 @@ public class BoundedPriorityQueueSet {
     public BoundedPriorityQueueSet(int maxSize) {
         this.queue = new LinkedList<>();
         this.maxSize = maxSize;
-    }//
+    }
 
+    /**
+     * Returns the number of tasks currently stored in the queue.
+     * @return the number of tasks in the queue
+     */
+    public int size() {
+        return queue.size();
+    }
 
 }
