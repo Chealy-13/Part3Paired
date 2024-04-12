@@ -80,4 +80,21 @@ public class BoundedPriorityQueueSet {
         int pos = calcPosition(task);
         queue.add(pos, task);
     }
+
+    /**
+     * checks to see if task can be added to queue at specific position based on its priority and
+     * only if queue is not full and task is not already in it
+     * @param task the task to be checked
+     * @return true if possible for task to be added, false otherwise.
+     */
+    public boolean offer(Task task){
+        if(isFull() || queue.contains(task)){
+            System.out.println("task cannot be added");
+            return false;
+        }
+        int pos = calcPosition(task);
+        queue.add(pos, task);
+        System.out.println("Task can be added");
+        return true;
+    }
 }
