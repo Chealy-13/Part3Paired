@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class BoundedPriorityQueueSet {
     private final LinkedList<Task> queue;
@@ -96,5 +97,55 @@ public class BoundedPriorityQueueSet {
         queue.add(pos, task);
         System.out.println("Task can be added");
         return true;
+    }
+
+    /**
+     * Retrieves, but does not remove, the first task in the queue.
+     *
+     * @return the first task in the queue
+     * @throws NoSuchElementException if the queue is empty
+     */
+    public Task element() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Queue is empty");
+        }
+        return queue.getFirst();
+    }
+
+    /**
+     * Retrieves, but does not remove, the first task in the queue.
+     *
+     * @return the first task in the queue, or null if the queue is empty
+     */
+    public Task peek() {
+        if (isEmpty()) {
+            return null;
+        }
+        return queue.getFirst();
+    }
+
+    /**
+     * Removes and returns the first task in the queue.
+     *
+     * @return the first task in the queue
+     * @throws NoSuchElementException if the queue is empty
+     */
+    public Task remove() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Queue is empty");
+        }
+        return queue.removeFirst();
+    }
+
+    /**
+     * Removes and returns the first task in the queue.
+     *
+     * @return the first task in the queue, or null if the queue is empty
+     */
+    public Task poll() {
+        if (isEmpty()) {
+            return null;
+        }
+        return queue.removeFirst();
     }
 }
