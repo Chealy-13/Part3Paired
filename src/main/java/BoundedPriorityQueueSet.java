@@ -8,7 +8,7 @@ public class BoundedPriorityQueueSet {
     /**
      * Creates a BoundedPriorityQueueSet with a default maximum size of 10.
      */
-    public BoundedPriorityQueueSet() {
+    public BoundedPriorityQueueSet(int maxSize, boolean useRiskyApproach) {
         this.queue = new LinkedList<>();
         this.maxSize = 10;
     }
