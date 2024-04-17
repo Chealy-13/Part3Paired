@@ -77,7 +77,7 @@ public class TaskManagerApp {
                 case 6:
                     // Exit the program
                     try {
-                        writeTasksToFile(taskQueue);
+                        writeTasksToF(taskQueue);
                     } catch (IOException e) {
                         System.out.println("Error writing tasks to file: " + e.getMessage());
                     }
@@ -86,12 +86,12 @@ public class TaskManagerApp {
                     System.out.print("Guess the approach used (risky or safe): ");
                     String guess = scanner.next().toLowerCase();
                     if (guess.equals("risky") && useRiskyApproach || guess.equals("safe") && !useRiskyApproach) {
-                        System.out.println("Congratulations! You guessed correctly!");
+                        System.out.println(" You guessed correctly!");
                     } else {
-                        System.out.println("Sorry, your guess was incorrect.");
+                        System.out.println("Sorry, your guess was wrong.");
                     }
 
-                    System.out.println("Exiting the program...");
+                    System.out.println("Exiting the program swiftly");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -101,7 +101,7 @@ public class TaskManagerApp {
         scanner.close();
     }
 
-    private static void writeTasksToFile(BoundedPriorityQueueSet taskQueue) throws IOException {
+    private static void writeTasksToF(BoundedPriorityQueueSet taskQueue) throws IOException {
         try (PrintWriter writer = new PrintWriter(new FileWriter("tasks.txt"))) {
             Task task;
             while ((task = taskQueue.poll()) != null) {
