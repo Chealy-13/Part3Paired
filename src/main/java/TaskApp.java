@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TaskManagerApp {
+public class TaskApp {
     public static void main(String[] args) {
         Random random = new Random();
         boolean useRiskyApproach = random.nextBoolean(); // Randomly choose risky or safe approach
